@@ -1,10 +1,19 @@
 <h1>Chatroom</h1>
 
+<% if current_user != nil %>
+	<p>ユーザー番号<%= current_user.id %>ログイン中</p>
+	<p>こんにちは <%= current_user.name %>さん</p>
+	<%= link_to "ログアウト",logout_path ,method: :delete %>	
+<% else %>
+	<p>ログインユーザーなし</p>
+	<%= link_to "ログイン",login_path %> <%= link_to "サインアップ",new_user_path %>
+<% end %>
+
 <div id="messages">
 	<%= render @messages %>
 </div>
 
 <form>
-  <label>Say something:</label><br>
+  <label>Say something:</label>
   <input type="text" data-behavior="room_speaker">
 </form>

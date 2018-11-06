@@ -1,0 +1,14 @@
+<div class="form-container">
+	<%= form_for(:session, url: signin_path) do |f| %>
+	<div class="form-name">
+		<p>NAME</p>
+	</div>
+	<div class="form-self">
+		<%= f.text_field :name,placeholder: "ENTER YOUR NAME" %>
+	</div>
+	<div class="submit-form">
+		<%= f.submit "LOG IN", :class=>"submit" %>
+	</div>
+
+	<% end %>
+</div>
